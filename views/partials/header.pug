@@ -3,7 +3,6 @@ html(lang='en')
 		title #{title}
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		link(rel='stylesheet', href='/public/css/bootstrap.css')
-		link(rel='stylesheet', href='/public/css/slick.css')
 		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:100,400,700')
 		link(rel='stylesheet', href='/public/css/style.css')
 		link(rel='stylesheet', href='/public/css/bootstrap-table.css')
@@ -53,13 +52,11 @@ html(lang='en')
 						form.form-inline
 							if (userData)
 								div.dropdown
-									button(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false").btn.btn-info.dropdown-toggle Hello, #{userData[0].firstName}
+									button(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false").btn.btn-info.dropdown-toggle Hello, #{userData[0].firstname}
 									div(aria-labelledby="accountDropDown").dropdown-menu
 										a(href="/account").dropdown-item Account
 										.dropdown-divider
 										a(href="/logout").dropdown-item Logout
 							else
 								button(type="button", data-html="true", data-toggle="popover", rel="popover", aria-haspopup="true", aria-expanded="false", data-content="<form action='/login' method='POST' class='form-signin'><input type='text' name='username' placeholder='Email' required='required' autofocus='autofocus' class='form-control'/>  <input type='password' name='password' placeholder='Password' required='required' class='form-control'/>  <input type='checkbox' name='remember' placeholder='Remember me'/>  Remember me  <button type='submit' class='btn btn-lg btn-primary btn-block'>Sign in</button><span class='clearfix'></span></form><a href='/join' class='text-center new-account'>Create an account</a>").btn.btn-info  Log in
-								
-			
 		br
