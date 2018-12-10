@@ -1,0 +1,55 @@
+include partials/header
+
+
+.content
+    .logins
+        .loginSection
+            .uk-card.uk-card-default.loginCard
+                .uk-card-header
+                    .uk-grid-small.uk-flex-middle(uk-grid='')
+                        .uk-width-expand
+                            h3.uk-card-title.uk-margin-remove-bottom Teacher Signup
+                .uk-card-body
+                    form(action='/teacher-signup' method='POST')
+                        .uk-margin
+                            .uk-inline
+                                span.uk-form-icon(uk-icon='icon: user')
+                                input.uk-input(type='text' placeholder='first name' name='firstname' required='required' autofocus='autofocus')
+                        .uk-margin
+                            .uk-inline
+                                span.uk-form-icon(uk-icon='icon: user')
+                                input.uk-input(type='text' placeholder='last name' name='lastname' required='required' autofocus='autofocus')
+                        .uk-margin
+                            .uk-inline
+                                span.uk-form-icon(uk-icon='icon: mail')
+                                input.uk-input(type='email' placeholder='email' name='username' required='required' autofocus='autofocus')
+                        .uk-margin
+                            .uk-inline
+                                span.uk-form-icon(uk-icon='icon: lock')
+                                input.uk-input(type='password' placeholder='password' name='password' required='required')
+                        .uk-inline
+                            button.uk-button.uk-button-default Sign Up <span uk-icon="arrow-right"></span>
+
+        .loginSection
+            .loginCard
+                p information for teachers signing up can go here
+
+//- div.container
+//- 	div.row
+//- 		.col-md-4.offset-md-4#loginBox
+//- 			div.account-wall
+//- 			form(class='form-signup', action='/join', method='POST')
+//- 				input(type='text', name='firstname' class='form-control', placeholder='First name', autofocus)
+//- 				input(type='text', name='lastname' class='form-control', placeholder='Last name')
+//- 				input(type='text', name='username' class='form-control', placeholder='Email',required)
+//- 				input(type='password', name='password' class='form-control', placeholder='Password', required)
+//- 				button(class='btn btn-lg btn-primary btn-block', type='submit') Join
+//- 				span.clearfix
+				
+//- 			a(href='/login', class='text-center new-account') Already have an account? Sign in.
+
+
+					
+//- br
+
+include partials/footer
