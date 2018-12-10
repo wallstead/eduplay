@@ -1,9 +1,55 @@
 include partials/header
 
-.container-fluid
-	.container
-		div.col-md-6.offset-md-3
-			h3.text-center Home
+//- .container-fluid
+//- 	.container
+//- 		div.col-md-6.offset-md-3
+//- 			h3.text-center Home
 			
-	br
-	include partials/footer
+//- 	br
+
+.content
+    .logins
+        .loginSection
+            .uk-card.uk-card-default.loginCard
+                .uk-card-header
+                    .uk-grid-small.uk-flex-middle(uk-grid='')
+                        .uk-width-expand
+                            h3.uk-card-title.uk-margin-remove-bottom Teacher Login
+                .uk-card-body
+                    form(action='/login' method='POST')
+                        .uk-margin
+                            .uk-inline
+                                span.uk-form-icon(uk-icon='icon: mail')
+                                input.uk-input(type='text' placeholder='email' name='username' required='required' autofocus='autofocus')
+                        .uk-margin
+                            .uk-inline
+                                span.uk-form-icon(uk-icon='icon: lock')
+                                input.uk-input(type='text' placeholder='password' name='password' required='required')
+                        .uk-inline
+                            button.uk-button.uk-button-default Log In <span uk-icon="arrow-right"></span>
+
+
+        .loginSection
+            .uk-card.uk-card-default.loginCard
+                .uk-card-header
+                    .uk-grid-small.uk-flex-middle(uk-grid='')
+                        .uk-width-expand
+                            h3.uk-card-title.uk-margin-remove-bottom Student Login
+                .uk-card-body
+                    form
+                        .uk-margin
+                            .uk-inline
+                                span.uk-form-icon(uk-icon='icon: user')
+                                input.uk-input(type='text' placeholder='username')
+                        .uk-margin
+                            .uk-inline
+                                span.uk-form-icon(uk-icon='icon: lock')
+                                input.uk-input(type='text' placeholder='password')
+                        .uk-inline
+                            button.uk-button.uk-button-default Log In <span uk-icon="arrow-right"></span>
+
+
+    
+            
+
+include partials/footer

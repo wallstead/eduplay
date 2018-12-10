@@ -5,7 +5,8 @@
   "version": "0.0.1",
   "homepage": "",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "scss": "node-sass --watch public/scss -o public/css"
   },
   "engines": {
     "node": "~8.9.4"
@@ -22,6 +23,7 @@
     "jquery": "^3.3.1",
     "mongodb": "^3.0.7",
     "node-gyp": "^3.6.2",
+    "node-sass": "^4.11.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pg": "^7.4.1",
