@@ -35,6 +35,10 @@ body {
     display: flex;
     justify-content: space-between; }
 
+.alert {
+  max-width: 500px;
+  margin: 1.5em auto; }
+
 .footer {
   margin-top: 1em;
   color: #9DA3AB;

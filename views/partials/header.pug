@@ -26,22 +26,7 @@ html(lang='en')
 		//- script(src='/public/js/scripts.js')
 	
 	body
-		if messages
-			if messages.warning
-				if messages.warning.length
-					div.alert.alert-warning.alert-dismissable
-						a(data-dismiss="alert", aria-label="close").close &times;
-						strong #{messages.warning}
-			if messages.danger
-				if messages.danger.length
-					div.alert.alert-danger.alert-dismissable
-						a(data-dismiss="alert", aria-label="close").close &times;
-						strong #{messages.danger}
-			if messages.success
-				if messages.success.length
-					div.alert.alert-success.alert-dismissable
-						a(data-dismiss="alert", aria-label="close").close &times;
-						strong #{messages.success}
+		
 
 
 		.header
@@ -53,6 +38,27 @@ html(lang='en')
 				.links
 					a(href="teacher-signup")
 						p Teacher Signup
+
+		if messages
+			if messages.warning
+				if messages.warning.length
+					.uk-alert-warning(uk-alert='').alert
+						a.uk-alert-close(uk-close='')
+						p
+							| #{messages.warning}
+			if messages.danger
+				if messages.danger.length
+					.uk-alert-danger(uk-alert='').alert
+						a.uk-alert-close(uk-close='')
+						p
+							| #{messages.danger}
+			if messages.success
+				if messages.success.length
+					.uk-alert-success(uk-alert='').alert
+						a.uk-alert-close(uk-close='')
+						p
+							| #{messages.success}
+
 
 		//- .container-fluid
 		//- 	.container(style="min-height:10em;")
