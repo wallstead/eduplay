@@ -11,13 +11,18 @@ include partials/header
         h1 #{title}
 
     .gameContent
-            .spelling-game 
-                .uk-margin
-                    button(class="uk-button uk-button-secondary") Play Game
-            .game-information
-                h3 Share with your students:
-                .game-connection-link
-                    input(type="text", value="www.eduplay.com/play/" + gameData.code)
+        .spelling-game 
+            .uk-margin
+                button(class="uk-button uk-button-secondary") Play Game
+        .game-information
+            h3 Simulate data:
+            .uk-margin
+                form(action='/simulate-game-data' method='POST')
+                    input(type='hidden', name='gameid', value='' + gameData.id)
+                    button(class="uk-button uk-button-secondary") Simulate
+            h3 See Results:
+            .uk-margin
+                a(class="uk-button uk-button-secondary", href='/games/' + gameSlug + '/results') My Results
 
 //- div.container
 //- 	div.row

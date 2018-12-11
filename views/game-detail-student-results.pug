@@ -1,0 +1,30 @@
+include partials/header
+
+.content.mygames
+    ul.uk-breadcrumb
+        li
+            a(href='/games') Games
+        li
+            a(href='/games/' + gameSlug) #{gameData.name}
+        li
+            a(href='#') #{title}
+
+    .subheader
+        h1 #{title}
+
+    .gameContent
+        table.uk-table
+            thead
+                tr
+                    th Word
+                    th Times Correct
+                    th Times Incorrect
+            tbody
+                each results, word in gameResultsData.results 
+                    tr
+                        td #{word}
+                        td #{results.timescorrect}
+                        td #{results.timeswrong}
+
+
+include partials/footer
