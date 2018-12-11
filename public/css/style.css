@@ -137,5 +137,31 @@ body {
     margin-top: 1em; }
     .mygames .creategameContent #add-word span, .mygames .gamedetailContent #add-word span {
       margin-left: 1em; }
+  .mygames .gamedetailContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .mygames .gamedetailContent .spelling-game {
+      width: 100%; }
+      @media (min-width: 768px) {
+        .mygames .gamedetailContent .spelling-game {
+          width: calc(70% - 1em); } }
+    .mygames .gamedetailContent .game-information {
+      width: 100%; }
+      @media (min-width: 768px) {
+        .mygames .gamedetailContent .game-information {
+          width: calc(30% - 1em); } }
+      .mygames .gamedetailContent .game-information .game-connection-link {
+        background-color: #e5e5e5;
+        padding: 10px;
+        border-radius: 10px; }
+        .mygames .gamedetailContent .game-information .game-connection-link input {
+          height: 50px;
+          width: 100%;
+          border: none;
+          border-radius: 10px;
+          padding: 0 10px;
+          font-size: 1.3rem;
+          text-align: center; }
 
 /* Create Game */

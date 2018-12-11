@@ -11,7 +11,6 @@ include partials/header
         h1 #{title}
 
     .gamedetailContent
-        .uk-margin
             .spelling-game 
                 form(action='/update-game' method='POST')
                     input(type='hidden', name='id' value='' + gameData.id)
@@ -29,6 +28,10 @@ include partials/header
                                 span(uk-icon='plus')
                     .uk-margin
                         button(class="uk-button uk-button-secondary") Update Game
+            .game-information
+                h3 Share with your students:
+                .game-connection-link
+                    input(type="text", value="www.eduplay.com/play/" + gameData.code)
 
 //- div.container
 //- 	div.row
