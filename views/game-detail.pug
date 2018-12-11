@@ -32,6 +32,9 @@ include partials/header
                 h3 Share with your students:
                 .game-connection-link
                     input(type="text", value="www.eduplay.com/play/" + gameData.code)
+                h3 See Results:
+                .uk-margin
+                    a(class="uk-button uk-button-secondary", href='/my-games/' + gameSlug + '/results') Student Results
 
 //- div.container
 //- 	div.row
