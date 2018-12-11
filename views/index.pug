@@ -24,7 +24,8 @@ include partials/header
                         .uk-margin
                             .uk-inline
                                 span.uk-form-icon(uk-icon='icon: lock')
-                                input.uk-input(type='password' placeholder='password' name='password' required='required')
+                                input.uk-input(type='password' placeholder='password' name='password' autocomplete='current-password' required='required')
+                        //- input(type='hidden', name='remember', value='true')
                         .uk-inline
                             button.uk-button.uk-button-default Log In <span uk-icon="arrow-right"></span>
 
@@ -45,6 +46,7 @@ include partials/header
                             .uk-inline
                                 span.uk-form-icon(uk-icon='icon: lock')
                                 input.uk-input(type='password' placeholder='password')
+                        //- input(type='hidden', name='remember', value='true')
                         .uk-inline
                             button.uk-button.uk-button-default Log In <span uk-icon="arrow-right"></span>
 

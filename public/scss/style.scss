@@ -4,6 +4,7 @@ $royalblue: rgba(3, 37, 108, 1);
 $denimblue: rgba(37, 65, 178, 1);
 $greenblue: rgba(23, 104, 172, 1);
 $cyan: rgba(6, 190, 225, 1);
+$lightborder: #e5e5e5;
 
 /* Global */
 
@@ -11,6 +12,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: $bg;
+    min-height: 100vh;
 }
 
 .content {
@@ -26,6 +28,7 @@ body {
     .logo {
         display: flex;
         align-items: center;
+
         a {
             text-decoration: none;
 
@@ -40,17 +43,33 @@ body {
     .links {
         display: flex;
         align-items: center;
-        color: white;
 
         a {
-            color: white;
             margin-left: 0.5em;
             text-decoration: none;
+        }
 
-            p {
-                margin: 0;
+        p {
+            margin: 0;
+            color: white;
+        }
+
+        button {
+            background: none;
+            box-shadow: 0px 0px 0px transparent;
+            border: 0px solid transparent;
+            text-shadow: 0px 0px 0px transparent;
+            color: white;
+            font-size: 16px;
+        }
+
+        .dropdown {
+            a {
+                // color: black;
             }
         }
+
+
     }
 
     .content {
@@ -93,6 +112,116 @@ body {
         }
     }
 }
+
+/* My Games */
+
+.mygames {
+    margin-top: 1em;
+
+    .subheader {
+        display: flex;
+        border-bottom: 1px solid $lightborder;
+        align-items: center;
+        padding-bottom: 1em;
+
+        h1 {
+            margin: 0 1em 0 0;
+        }
+
+        button {
+            background: lighten($denimblue, 10%);
+            box-shadow: 0px 0px 0px transparent;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            text-shadow: 0px 0px 0px transparent;
+            color: white;
+            padding: 0.5em 1em;
+            margin-top: 5px;
+            font-size: 16px;
+            transition: background-color 0.1s;
+
+            span {
+                margin-left: 0.25em;
+            }
+
+            &:hover {
+                background-color: $denimblue;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .mygamesContent {
+        margin-top: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .gameBox {
+            text-decoration: none;
+            display: flex;
+            width: 100%;
+            margin-bottom: 1em;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+            border-radius: 5px;
+            transition: transform 0.2s;
+
+            @media(min-width: 768px) {
+                width: calc(50% - 1em);
+            }
+
+            &:hover {
+                transform: translateY(-3px)
+            }
+
+            &:active {
+                transform: translateY(3px)
+            }
+
+            .gameIcon {
+                height: 100px;
+                width: 100px;
+                background-size: cover;
+                border-radius: 5px;
+            }
+
+            .gameInfo {
+                display: flex;
+                flex-direction: column;
+                padding-left: 1em;
+                justify-content: center;
+
+                h3, p {
+                    margin: 0;
+                    color: #333;
+                }
+            }
+
+            span {
+                display: flex;
+                margin-left: auto; // pull arrow right
+                margin-right: 0.5em;
+                font-size: 3rem;
+                color: #333;
+            }
+        }
+    }
+
+    .creategameContent {
+        margin-top: 1em;
+
+        #add-word {
+            span { 
+                margin-left: 1em;
+            }
+        }
+    }
+}
+
+/* Create Game */
+
+
 
 // @media(min-width: 768px) {
 // 	.loginSection {

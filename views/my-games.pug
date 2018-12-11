@@ -1,0 +1,50 @@
+include partials/header
+
+.content.mygames
+    //- ul.uk-breadcrumb
+    //-     li
+    //-         a(href='#') My Games
+    //-     li
+    //-         a(href='#') Item
+    //-     li.uk-disabled
+    //-         a Disabled
+    //-     li
+    //-         span Active
+
+    .subheader
+        h1 My Games
+        a(href='create-game')
+            button
+                | Create New 
+                span(uk-icon='plus')
+
+    .mygamesContent 
+        each game in games.length ? games : ['There are no games']
+            a(href='#').gameBox
+                    div(class='gameIcon' style='background-image: url("public/img/abc.png")')
+                    .gameInfo
+                        h3 #{game.name}
+                        p _ students added
+                        p Average: _% correct
+                    span(uk-icon="icon: chevron-right; ratio: 2")
+
+
+//- div.container
+//- 	div.row
+//- 		.col-md-4.offset-md-4#loginBox
+//- 			div.account-wall
+//- 			form(class='form-signin', action='/login', method='POST')
+//- 				input(type='text', name='username' class='form-control', placeholder='Email',required, autofocus)
+//- 				input(type='password', name='password' class='form-control', placeholder='Password', required)
+//- 				input(type='checkbox', name='remember', placeholder='Remember me')
+//- 				|   Remember me
+//- 				button(class='btn btn-lg btn-primary btn-block', type='submit') Sign in
+//- 				span.clearfix
+				
+//- 			a(href='/join', class='text-center new-account') Create an account
+
+
+					
+//- br
+
+include partials/footer

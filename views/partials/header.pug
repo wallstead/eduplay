@@ -1,6 +1,6 @@
 html(lang='en')
 	head
-		title Eduplay - #{title}
+		title #{title} - Eduplay
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		//- link(rel='stylesheet', href='/public/css/bootstrap.css')
 		//- link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:100,400,700')
@@ -9,7 +9,7 @@ html(lang='en')
 		//- link(rel='stylesheet', href='/public/css/bootstrap-select.css')
 		//- link(rel='stylesheet', href='/public/css/font-awesome.css')
 		//- link(rel='stylesheet', href='/public/css/selectize.css')
-		//- script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
 		//- script(src='/public/js/slick.js')
 
 		link(rel='stylesheet', href='/public/css/style.css')
@@ -23,7 +23,7 @@ html(lang='en')
 		//- script(src='/public/js/bootstrap-select.js')
 		//- script(src='/public/js/selectize.js')
 		//- script(src='/public/js/Chart.js')
-		//- script(src='/public/js/scripts.js')
+		script(src='/public/js/scripts.js')
 	
 	body
 		
@@ -36,8 +36,22 @@ html(lang='en')
 						h2 Eduplay
 					
 				.links
-					a(href="teacher-signup")
-						p Teacher Signup
+					if (userData)
+						button 
+							|#{userData[0].firstname} #{userData[0].lastname} 
+							span(uk-icon="chevron-down")
+						.dropdown(uk-dropdown='pos: bottom-right; animation: uk-animation-scale-up; duration: 100' class="uk-transform-origin-top-right")
+							ul.uk-nav.uk-dropdown-nav
+								li
+									a(href='/my-games') My Games
+								li
+									a(href='/account') Account
+								li.uk-nav-divider
+								li
+									a(href='/logout') Logout
+					else
+						a(href="teacher-signup")
+							p Teacher Signup
 
 		if messages
 			if messages.warning

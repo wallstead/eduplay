@@ -2,7 +2,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #F2F3F9; }
+  background-color: #F2F3F9;
+  min-height: 100vh; }
 
 .content {
   max-width: 1200px;
@@ -23,14 +24,20 @@ body {
         color: white; }
   .header .links {
     display: flex;
-    align-items: center;
-    color: white; }
+    align-items: center; }
     .header .links a {
-      color: white;
       margin-left: 0.5em;
       text-decoration: none; }
-      .header .links a p {
-        margin: 0; }
+    .header .links p {
+      margin: 0;
+      color: white; }
+    .header .links button {
+      background: none;
+      box-shadow: 0px 0px 0px transparent;
+      border: 0px solid transparent;
+      text-shadow: 0px 0px 0px transparent;
+      color: white;
+      font-size: 16px; }
   .header .content {
     display: flex;
     justify-content: space-between; }
@@ -59,3 +66,76 @@ body {
     @media (min-width: 768px) {
       .logins .loginSection {
         width: calc(50% - 1em); } }
+
+/* My Games */
+.mygames {
+  margin-top: 1em; }
+  .mygames .subheader {
+    display: flex;
+    border-bottom: 1px solid #e5e5e5;
+    align-items: center;
+    padding-bottom: 1em; }
+    .mygames .subheader h1 {
+      margin: 0 1em 0 0; }
+    .mygames .subheader button {
+      background: #3555d5;
+      box-shadow: 0px 0px 0px transparent;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      text-shadow: 0px 0px 0px transparent;
+      color: white;
+      padding: 0.5em 1em;
+      margin-top: 5px;
+      font-size: 16px;
+      transition: background-color 0.1s; }
+      .mygames .subheader button span {
+        margin-left: 0.25em; }
+      .mygames .subheader button:hover {
+        background-color: #2541b2;
+        cursor: pointer; }
+  .mygames .mygamesContent {
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .mygames .mygamesContent .gameBox {
+      text-decoration: none;
+      display: flex;
+      width: 100%;
+      margin-bottom: 1em;
+      background-color: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      border-radius: 5px;
+      transition: transform 0.2s; }
+      @media (min-width: 768px) {
+        .mygames .mygamesContent .gameBox {
+          width: calc(50% - 1em); } }
+      .mygames .mygamesContent .gameBox:hover {
+        transform: translateY(-3px); }
+      .mygames .mygamesContent .gameBox:active {
+        transform: translateY(3px); }
+      .mygames .mygamesContent .gameBox .gameIcon {
+        height: 100px;
+        width: 100px;
+        background-size: cover;
+        border-radius: 5px; }
+      .mygames .mygamesContent .gameBox .gameInfo {
+        display: flex;
+        flex-direction: column;
+        padding-left: 1em;
+        justify-content: center; }
+        .mygames .mygamesContent .gameBox .gameInfo h3, .mygames .mygamesContent .gameBox .gameInfo p {
+          margin: 0;
+          color: #333; }
+      .mygames .mygamesContent .gameBox span {
+        display: flex;
+        margin-left: auto;
+        margin-right: 0.5em;
+        font-size: 3rem;
+        color: #333; }
+  .mygames .creategameContent {
+    margin-top: 1em; }
+    .mygames .creategameContent #add-word span {
+      margin-left: 1em; }
+
+/* Create Game */
