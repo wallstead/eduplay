@@ -1,0 +1,38 @@
+include partials/header
+
+
+.content
+    .logins
+        .loginSection
+            .uk-card.uk-card-default.loginCard
+                .uk-card-header
+                    .uk-grid-small.uk-flex-middle(uk-grid='')
+                        .uk-width-expand
+                            h3.uk-card-title.uk-margin-remove-bottom Student Signup
+                .uk-card-body
+                    form(action='/student-signup' method='POST')
+                        
+                        .uk-margin
+                            .uk-inline
+                                span.uk-form-icon(uk-icon='icon: user')
+                                input.uk-input(type='text' placeholder='first name' name='firstname' required='required' autofocus='autofocus')
+                        .uk-margin
+                            .uk-inline
+                                span.uk-form-icon(uk-icon='icon: user')
+                                input.uk-input(type='text' placeholder='last name' name='lastname' required='required' autofocus='autofocus')
+                        .uk-margin
+                            .uk-inline
+                                span.uk-form-icon(uk-icon='icon: happy')
+                                input.uk-input(type='text' placeholder='username' name='username' required='required' autofocus='autofocus')
+                        .uk-margin
+                            .uk-inline
+                                span.uk-form-icon(uk-icon='icon: lock')
+                                input.uk-input(type='password' placeholder='password' name='password' required='required')
+                        .uk-inline
+                            input(type='hidden', name='teacherid' value='' + teacherID)
+                            button.uk-button.uk-button-default Sign Up <span uk-icon="arrow-right"></span>
+
+        .loginSection
+            .loginCard
+                p information for students signing up can go here
+include partials/footer
