@@ -133,9 +133,9 @@ body {
         margin-right: 0.5em;
         font-size: 3rem;
         color: #333; }
-  .mygames .creategameContent {
+  .mygames .creategameContent, .mygames .gamedetailContent {
     margin-top: 1em; }
-    .mygames .creategameContent #add-word span {
+    .mygames .creategameContent #add-word span, .mygames .gamedetailContent #add-word span {
       margin-left: 1em; }
 
 /* Create Game */

@@ -20,7 +20,7 @@ include partials/header
 
     .mygamesContent 
         each game in games.length ? games : ['There are no games']
-            a(href='#').gameBox
+            a(href='my-games/' + game.slug).gameBox
                     div(class='gameIcon' style='background-image: url("public/img/abc.png")')
                     .gameInfo
                         h3 #{game.name}
