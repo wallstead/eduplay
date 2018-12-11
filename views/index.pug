@@ -37,15 +37,15 @@ include partials/header
                         .uk-width-expand
                             h3.uk-card-title.uk-margin-remove-bottom Student Login
                 .uk-card-body
-                    form
+                    form(action='/login-student' method='POST')
                         .uk-margin
                             .uk-inline
                                 span.uk-form-icon(uk-icon='icon: user')
-                                input.uk-input(type='text' placeholder='username')
+                                input.uk-input(type='text' placeholder='username' name='username' required='required')
                         .uk-margin
                             .uk-inline
                                 span.uk-form-icon(uk-icon='icon: lock')
-                                input.uk-input(type='password' placeholder='password')
+                                input.uk-input(type='password' placeholder='password' name='password' required='required')
                         //- input(type='hidden', name='remember', value='true')
                         .uk-inline
                             button.uk-button.uk-button-default Log In <span uk-icon="arrow-right"></span>

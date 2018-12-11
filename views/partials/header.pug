@@ -38,17 +38,29 @@ html(lang='en')
 				.links
 					if (userData)
 						button 
-							|#{userData[0].firstname} #{userData[0].lastname} 
+							if userData[0].username 
+								|#{userData[0].username}
+							else
+								|#{userData[0].firstname} #{userData[0].lastname} 
 							span(uk-icon="chevron-down")
 						.dropdown(uk-dropdown='pos: bottom-right; animation: uk-animation-scale-up; duration: 100' class="uk-transform-origin-top-right")
 							ul.uk-nav.uk-dropdown-nav
-								li
-									a(href='/my-games') My Games
-								li
-									a(href='/account') Account
-								li.uk-nav-divider
-								li
-									a(href='/logout') Logout
+								if userData[0].username 
+									li
+										a(href='/games') Games
+									li
+										a(href='/account') Account
+									li.uk-nav-divider
+									li
+										a(href='/logout') Logout
+								else
+									li
+										a(href='/my-games') My Games
+									li
+										a(href='/account') Account
+									li.uk-nav-divider
+									li
+										a(href='/logout') Logout
 					else
 						a(href="/teacher-signup")
 							p Teacher Signup

@@ -18,6 +18,11 @@ body {
 .content {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1em;
+
+    @media(min-width: 768px) {
+        padding: 0;
+    }
 }
 
 .header {
@@ -168,7 +173,7 @@ body {
             transition: transform 0.2s;
 
             @media(min-width: 768px) {
-                width: calc(50% - 1em);
+                width: calc(50% - 0.5em);
             }
 
             &:hover {
@@ -208,7 +213,7 @@ body {
         }
     }
 
-    .creategameContent, .gamedetailContent {
+    .creategameContent, .gamedetailContent, .gameContent {
         margin-top: 1em;
 
         #add-word {
@@ -218,7 +223,7 @@ body {
         }
     }
 
-    .gamedetailContent {
+    .gamedetailContent, .gameContent {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -234,8 +239,6 @@ body {
 
         .game-information {
             width: 100%;
-            // background-color: yellow;
-// 
             @media(min-width: 768px) {
                 width: calc(30% - 1em);
             }

@@ -12,20 +12,15 @@ include partials/header
     //-         span Active
 
     .subheader
-        h1 My Games
-        a(href='create-game')
-            button
-                | Create New 
-                span(uk-icon='plus')
+        h1 Games
 
     .mygamesContent 
-        each game in games 
-            a(href='my-games/' + game.slug).gameBox
+        each game in games.length ? games : ['There are no games']
+            a(href='games/' + game.slug).gameBox
                     div(class='gameIcon' style='background-image: url("public/img/abc.png")')
                     .gameInfo
                         h3 #{game.name}
-                        p _ students added
-                        p Average: _% correct
+                        p Your score: 95% correct
                     span(uk-icon="icon: chevron-right; ratio: 2")
 
 

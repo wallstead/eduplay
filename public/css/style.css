@@ -7,7 +7,11 @@ body {
 
 .content {
   max-width: 1200px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 0 1em; }
+  @media (min-width: 768px) {
+    .content {
+      padding: 0; } }
 
 .header {
   background-color: #1768ac;
@@ -109,7 +113,7 @@ body {
       transition: transform 0.2s; }
       @media (min-width: 768px) {
         .mygames .mygamesContent .gameBox {
-          width: calc(50% - 1em); } }
+          width: calc(50% - 0.5em); } }
       .mygames .mygamesContent .gameBox:hover {
         transform: translateY(-3px); }
       .mygames .mygamesContent .gameBox:active {
@@ -133,29 +137,29 @@ body {
         margin-right: 0.5em;
         font-size: 3rem;
         color: #333; }
-  .mygames .creategameContent, .mygames .gamedetailContent {
+  .mygames .creategameContent, .mygames .gamedetailContent, .mygames .gameContent {
     margin-top: 1em; }
-    .mygames .creategameContent #add-word span, .mygames .gamedetailContent #add-word span {
+    .mygames .creategameContent #add-word span, .mygames .gamedetailContent #add-word span, .mygames .gameContent #add-word span {
       margin-left: 1em; }
-  .mygames .gamedetailContent {
+  .mygames .gamedetailContent, .mygames .gameContent {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; }
-    .mygames .gamedetailContent .spelling-game {
+    .mygames .gamedetailContent .spelling-game, .mygames .gameContent .spelling-game {
       width: 100%; }
       @media (min-width: 768px) {
-        .mygames .gamedetailContent .spelling-game {
+        .mygames .gamedetailContent .spelling-game, .mygames .gameContent .spelling-game {
           width: calc(70% - 1em); } }
-    .mygames .gamedetailContent .game-information {
+    .mygames .gamedetailContent .game-information, .mygames .gameContent .game-information {
       width: 100%; }
       @media (min-width: 768px) {
-        .mygames .gamedetailContent .game-information {
+        .mygames .gamedetailContent .game-information, .mygames .gameContent .game-information {
           width: calc(30% - 1em); } }
-      .mygames .gamedetailContent .game-information .game-connection-link {
+      .mygames .gamedetailContent .game-information .game-connection-link, .mygames .gameContent .game-information .game-connection-link {
         background-color: #e5e5e5;
         padding: 10px;
         border-radius: 10px; }
-        .mygames .gamedetailContent .game-information .game-connection-link input {
+        .mygames .gamedetailContent .game-information .game-connection-link input, .mygames .gameContent .game-information .game-connection-link input {
           height: 50px;
           width: 100%;
           border: none;
