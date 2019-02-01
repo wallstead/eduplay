@@ -71,6 +71,10 @@ body {
       .logins .loginSection {
         width: calc(50% - 1em); } }
 
+/* About */
+.about {
+  margin-top: 2em; }
+
 /* My Games */
 .mygames {
   margin-top: 1em; }
