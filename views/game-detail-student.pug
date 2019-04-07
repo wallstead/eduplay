@@ -14,6 +14,8 @@ include partials/header
         .spelling-game 
             .uk-margin
                 button(class="uk-button uk-button-secondary") Play Game
+            //- iframe.game-frame(src="http://localhost:5000/public/games/spelling/index.html")
+            div.new-game-frame
         .game-information
             h3 Simulate data:
             .uk-margin
@@ -23,23 +25,6 @@ include partials/header
             h3 See Results:
             .uk-margin
                 a(class="uk-button uk-button-secondary", href='/games/' + gameSlug + '/results') My Results
-
-//- div.container
-//- 	div.row
-//- 		.col-md-4.offset-md-4#loginBox
-//- 			div.account-wall
-//- 			form(class='form-signin', action='/login', method='POST')
-//- 				input(type='text', name='username' class='form-control', placeholder='Email',required, autofocus)
-//- 				input(type='password', name='password' class='form-control', placeholder='Password', required)
-//- 				input(type='checkbox', name='remember', placeholder='Remember me')
-//- 				|   Remember me
-//- 				button(class='btn btn-lg btn-primary btn-block', type='submit') Sign in
-//- 				span.clearfix
-				
-//- 			a(href='/join', class='text-center new-account') Create an account
-
-
-					
-//- br
+    
 
 include partials/footer

@@ -10,31 +10,20 @@ html(lang='en')
 		//- link(rel='stylesheet', href='/public/css/font-awesome.css')
 		//- link(rel='stylesheet', href='/public/css/selectize.css')
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+		script(src='http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js')
 		//- script(src='/public/js/slick.js')
 
 		link(rel='stylesheet', href='/public/css/style.css')
 		//- UIKit
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css')
-		
-		//- script(src='/public/js/popper.js')
-		//- script(src='/public/js/tooltip.js')
-		//- script(src='/public/js/bootstrap.js')
-		//- script(src='/public/js/bootstrap-table.js')
-		//- script(src='/public/js/bootstrap-select.js')
-		//- script(src='/public/js/selectize.js')
-		//- script(src='/public/js/Chart.js')
 		script(src='/public/js/scripts.js')
-	
+		script(src='/public/games/spelling/Build/UnityLoader.js')
 	body
-		
-
-
 		.header
 			.content
 				.logo
 					a(href="/")
 						h2 Eduplay
-					
 				.links
 					if (userData)
 						button 
