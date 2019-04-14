@@ -15,7 +15,7 @@ include partials/header
             .uk-margin
                 button(class="uk-button uk-button-secondary") Play Game
             //- iframe.game-frame(src="http://localhost:5000/public/games/spelling/index.html")
-            div.new-game-frame
+            div.new-game-frame(data-gameid=gameData.id, data-studentid=userData[0].id)
         .game-information
             h3 Simulate data:
             .uk-margin

@@ -1,7 +1,11 @@
-function SayHello(arg) {
-	// show the message
-	alert(arg);
+function SayHello(arg) { // rename
+	/* arg will be the json message to be saved */
+	const gameId = $("[data-gameid]")[0].attributes[1].value
+	const studentId = $("[data-studentid]")[0].attributes[2].value
+
+	$.post( "http://localhost:5000/games/data/" + gameId + "/" + studentId, { testdata: arg } )
 }
+
 $(document).ready(function () {
 
 	$('#add-word').on('click', function () {
@@ -13,7 +17,15 @@ $(document).ready(function () {
 		$(this).closest(".uk-margin").remove();
 	});
 
-	
+
+	/* Game communcation */
+
+	/* 
+		1. GET request game data from server. done
+		2. loadGame() with game data JSON string done
+		3. save game data with function "SayHello" (rename).
+	*/
+
 	function myProgress(gameInstance, progress) {
 		if (progress == 1) {
 			console.log("game is loaded")
@@ -22,13 +34,26 @@ $(document).ready(function () {
 		}
 	}
 
-	function loadGame() {
+	function loadGame(gameData) {
 		var myGame = UnityLoader.instantiate($(".new-game-frame")[0], "http://localhost:5000/public/games/spelling/Build/testBuild.json", {
-			onProgress: myProgress
+			onProgress: (gameInstance, progress) => {
+				if (progress == 1) {
+					console.log("game is loaded")
+					console.log(gameInstance)
+					gameInstance.SendMessage("Main Camera", "SetGameData", gameData[0]);
+				}
+			}
 		});
 	}
 
 	if ($(".new-game-frame").length) {
-		loadGame()
+		// get game id from element data
+		const gameId = $("[data-gameid]")[0].attributes[1].value
+
+		$.get( "http://localhost:5000/games/data/" + gameId, function( data ) {
+			console.log("game data:");
+			console.log(data);
+			loadGame(data);
+		});
 	}
 });
