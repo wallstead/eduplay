@@ -16,8 +16,13 @@ include partials/header
 
     .mygamesContent 
         each game in games 
+            - var isMath = game.gametype == 'math' 
+            - var isSpelling = game.gametype == 'spelling' 
             a(href='games/' + game.slug).gameBox
-                    div(class='gameIcon' style='background-image: url("public/img/abc.png")')
+                    if isSpelling
+                        div(class='gameIcon' style='background-image: url("public/img/abc.png")')
+                    else if isMath
+                        div(class='gameIcon' style='background-image: url("public/img/math.png")')
                     .gameInfo
                         h3 #{game.name}
                         p Your score: 95% correct

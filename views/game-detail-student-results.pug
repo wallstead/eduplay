@@ -1,5 +1,8 @@
 include partials/header
 
+- var isMath = gameData.gametype == 'math' 
+- var isSpelling = gameData.gametype == 'spelling' 
+
 .content.mygames
     ul.uk-breadcrumb
         li
@@ -13,16 +16,29 @@ include partials/header
         h1 #{title}
 
     .gameContent
-        table.uk-table
-            thead
-                tr
-                    th Word
-                    th Times Incorrect
-            tbody
-                each timesWrong, word in gameResultsData 
+        if isSpelling
+            table.uk-table
+                thead
                     tr
-                        td #{word}
-                        td #{timesWrong}
+                        th Word
+                        th Times Incorrect
+                tbody
+                    each timesWrong, word in gameResultsData 
+                        tr
+                            td #{word}
+                            td #{timesWrong}
+
+        else if isMath
+            table.uk-table
+                thead
+                    tr
+                        th Problems
+                        th Times Correct
+                tbody
+                    each timesWrong, problem in gameResultsData 
+                        tr
+                            td #{problem}
+                            td #{timesWrong}
 
 
 include partials/footer
