@@ -32,14 +32,32 @@ include partials/header
                                     input.uk-input(type='text', name='words')
                                     button.uk-form-icon.uk-form-icon-flip(uk-icon='icon: close', type="button", class="delete-word")
                         .uk-margin
-                            button(class="uk-button uk-button-primary", type="button", id="add-word") 
+                            button(class="uk-button uk-button-primary", type="button", id="add-word-spelling") 
                                 |Add Word
                                 span(uk-icon='plus')
                     .uk-margin
                         button(class="uk-button uk-button-secondary") Create Game
                         
             .math-game
-                p [Add math game options here]
+                form(action='/create-game' method='POST')
+                    input(type='hidden', name='gametype' value='math')
+                    fieldset.uk-fieldset
+                        legend.uk-legend Game Name
+                        .uk-margin
+                            input.uk-input(type='text', placeholder='e.g. Math Game 1' name='name' required='required')
+                    fieldset.uk-fieldset
+                        legend.uk-legend Problems
+                        .uk-margin.problemsInGame
+                            .uk-margin
+                                .uk-inline
+                                    input.uk-input(type='text', name='problems')
+                                    button.uk-form-icon.uk-form-icon-flip(uk-icon='icon: close', type="button", class="delete-problem")
+                        .uk-margin
+                            button(class="uk-button uk-button-primary", type="button", id="add-word-math") 
+                                |Add Problem
+                                span(uk-icon='plus')
+                    .uk-margin
+                        button(class="uk-button uk-button-secondary") Create Game
 
 //- div.container
 //- 	div.row

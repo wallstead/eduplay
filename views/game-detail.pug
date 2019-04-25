@@ -1,5 +1,8 @@
 include partials/header
 
+- var isMath = gameData.gametype == 'math' 
+- var isSpelling = gameData.gametype == 'spelling' 
+
 .content.mygames
     ul.uk-breadcrumb
         li
@@ -11,23 +14,45 @@ include partials/header
         h1 #{title}
 
     .gamedetailContent
-            .spelling-game 
-                form(action='/update-game' method='POST')
-                    input(type='hidden', name='id' value='' + gameData.id)
-                    fieldset.uk-fieldset
-                        legend.uk-legend Words
-                        .uk-margin.wordsInGame
-                             each word in gameData.options.words
-                                .uk-margin
-                                    .uk-inline
-                                        input.uk-input(type='text', name='words', value='' + word)
-                                        button.uk-form-icon.uk-form-icon-flip(uk-icon='icon: close', type="button", class="delete-word")
+    
+            if isSpelling
+                .spelling-game 
+                    form(action='/update-game' method='POST')
+                        input(type='hidden', name='id' value='' + gameData.id)
+                        fieldset.uk-fieldset
+                            legend.uk-legend Words
+                            .uk-margin.wordsInGame
+                                each word in gameData.options.words
+                                    .uk-margin
+                                        .uk-inline
+                                            input.uk-input(type='text', name='words', value='' + word)
+                                            button.uk-form-icon.uk-form-icon-flip(uk-icon='icon: close', type="button", class="delete-word")
+                            .uk-margin
+                                button(class="uk-button uk-button-primary", type="button", id="add-word") 
+                                    |Add Word
+                                    span(uk-icon='plus')
                         .uk-margin
-                            button(class="uk-button uk-button-primary", type="button", id="add-word") 
-                                |Add Word
-                                span(uk-icon='plus')
-                    .uk-margin
-                        button(class="uk-button uk-button-secondary") Update Game
+                            button(class="uk-button uk-button-secondary") Update Game
+            else if isMath
+                .math-game 
+                    form(action='/update-game' method='POST')
+                        input(type='hidden', name='id' value='' + gameData.id)
+                        fieldset.uk-fieldset
+                            legend.uk-legend Problems
+                            .uk-margin.problemsInGame
+                                each problem in gameData.options.problems
+                                    .uk-margin
+                                        .uk-inline
+                                            input.uk-input(type='text', name='problems', value='' + problem)
+                                            button.uk-form-icon.uk-form-icon-flip(uk-icon='icon: close', type="button", class="delete-problem")
+                            .uk-margin
+                                button(class="uk-button uk-button-primary", type="button", id="add-problem") 
+                                    |Add Problem
+                                    span(uk-icon='plus')
+                        .uk-margin
+                            button(class="uk-button uk-button-secondary") Update Game
+            else
+            
             .game-information
                 h3 Share with your students:
                 .game-connection-link
