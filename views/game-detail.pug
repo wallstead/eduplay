@@ -17,7 +17,7 @@ include partials/header
                     fieldset.uk-fieldset
                         legend.uk-legend Words
                         .uk-margin.wordsInGame
-                             each word in gameData.options
+                             each word in gameData.options.words
                                 .uk-margin
                                     .uk-inline
                                         input.uk-input(type='text', name='words', value='' + word)
