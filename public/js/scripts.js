@@ -1,4 +1,4 @@
-function SayHello(arg) { // rename
+function SaveResults(arg) { // rename
 	/* arg will be the json message to be saved */
 	const gameId = $("[data-gameid]")[0].attributes[1].value
 	const studentId = $("[data-studentid]")[0].attributes[2].value
@@ -26,21 +26,21 @@ $(document).ready(function () {
 		3. save game data with function "SayHello" (rename).
 	*/
 
-	function myProgress(gameInstance, progress) {
-		if (progress == 1) {
-			console.log("game is loaded")
-			console.log(gameInstance)
-			gameInstance.SendMessage("Main Camera", "SetGameData", "Hello from the web page!");
-		}
-	}
+	// function myProgress(gameInstance, progress) {
+	// 	if (progress == 1) {
+	// 		console.log("game is loaded")
+	// 		console.log(gameInstance)
+	// 		gameInstance.SendMessage("Main Camera", "SetGameData", "Hello from the web page!");
+	// 	}
+	// }
 
 	function loadGame(gameData) {
-		var myGame = UnityLoader.instantiate($(".new-game-frame")[0], "http://localhost:5000/public/games/spelling/Build/testBuild.json", {
+		var myGame = UnityLoader.instantiate($(".new-game-frame")[0], "http://localhost:5000/public/games/spelling/Build/TypingBuild.json", {
 			onProgress: (gameInstance, progress) => {
 				if (progress == 1) {
 					console.log("game is loaded")
 					console.log(gameInstance)
-					gameInstance.SendMessage("Main Camera", "SetGameData", gameData[0]);
+					gameInstance.SendMessage("GameMgr", "SetGameData", JSON.stringify(gameData));
 				}
 			}
 		});
