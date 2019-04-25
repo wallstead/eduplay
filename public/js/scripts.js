@@ -43,26 +43,40 @@ $(document).ready(function () {
 	// 	}
 	// }
 
-	function loadGame(gameData) {
-		var myGame = UnityLoader.instantiate($(".new-game-frame")[0], "http://localhost:5000/public/games/spelling/Build/TypingFinalBuild.json", {
-			onProgress: (gameInstance, progress) => {
-				if (progress == 1) {
-					console.log("game is loaded")
-					console.log(gameInstance)
-					gameInstance.SendMessage("GameMgr", "SetGameData", JSON.stringify(gameData));
+	function loadGame(gameType, gameData) {
+		if (gameType == 'spelling') {
+			var myGame = UnityLoader.instantiate($(".new-game-frame")[0], "http://localhost:5000/public/games/spelling/Build/TypingFinalBuild.json", {
+				onProgress: (gameInstance, progress) => {
+					if (progress == 1) {
+						console.log("game is loaded")
+						console.log(gameInstance)
+						gameInstance.SendMessage("GameMgr", "SetGameData", JSON.stringify(gameData));
+					}
 				}
-			}
-		});
+			});
+		} else if (gameType == 'math') {
+			var myGame = UnityLoader.instantiate($(".new-game-frame")[0], "http://localhost:5000/public/games/math/Build/FinalBuild.json", {
+				onProgress: (gameInstance, progress) => {
+					if (progress == 1) {
+						console.log("game is loaded")
+						console.log(gameInstance)
+						gameInstance.SendMessage("GameMgr", "SetGameData", JSON.stringify(gameData));
+					}
+				}
+			});
+		}
+		
 	}
 
 	if ($(".new-game-frame").length) {
 		// get game id from element data
 		const gameId = $("[data-gameid]")[0].attributes[1].value
+		const gameType = $("[data-gametype]")[0].attributes[3].value
 
 		$.get( "http://localhost:5000/games/data/" + gameId, function( data ) {
 			console.log("game data:");
 			console.log(data);
-			loadGame(data);
+			loadGame(gameType, data);
 		});
 	}
 });

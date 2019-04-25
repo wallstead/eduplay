@@ -240,7 +240,21 @@ body {
             @media(min-width: 768px) {
                 width: calc(70% - 1em);
             }
+
+            .new-game-frame {
+                height: 600px;
+            }
         }
+
+        .math-game {
+            width: 100%;
+            .new-game-frame {
+                height: 768px;
+                width: 1024px;
+            }
+        }
+
+        
 
         .game-information {
             width: 100%;

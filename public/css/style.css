@@ -154,6 +154,13 @@ body {
       @media (min-width: 768px) {
         .mygames .gamedetailContent .spelling-game, .mygames .gameContent .spelling-game {
           width: calc(70% - 1em); } }
+      .mygames .gamedetailContent .spelling-game .new-game-frame, .mygames .gameContent .spelling-game .new-game-frame {
+        height: 600px; }
+    .mygames .gamedetailContent .math-game, .mygames .gameContent .math-game {
+      width: 100%; }
+      .mygames .gamedetailContent .math-game .new-game-frame, .mygames .gameContent .math-game .new-game-frame {
+        height: 768px;
+        width: 1024px; }
     .mygames .gamedetailContent .game-information, .mygames .gameContent .game-information {
       width: 100%; }
       @media (min-width: 768px) {

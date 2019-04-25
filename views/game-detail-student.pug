@@ -1,5 +1,8 @@
 include partials/header
 
+- var isMath = gameData.gametype == 'math' 
+- var isSpelling = gameData.gametype == 'spelling' 
+
 .content.mygames
     ul.uk-breadcrumb
         li
@@ -11,17 +14,15 @@ include partials/header
         h1 #{title}
 
     .gameContent
-        .spelling-game 
-            .uk-margin
-                button(class="uk-button uk-button-secondary") Play Game
-            //- iframe.game-frame(src="http://localhost:5000/public/games/spelling/index.html")
-            div.new-game-frame(data-gameid=gameData.id, data-studentid=userData[0].id)
+        if isSpelling
+            .spelling-game 
+                .uk-margin
+                div.new-game-frame(data-gameid=gameData.id, data-studentid=userData[0].id, data-gametype=gameData.gametype)
+        else if isMath
+            .math-game 
+                .uk-margin
+                div.new-game-frame(data-gameid=gameData.id, data-studentid=userData[0].id, data-gametype=gameData.gametype)
         .game-information
-            h3 Simulate data:
-            .uk-margin
-                form(action='/simulate-game-data' method='POST')
-                    input(type='hidden', name='gameid', value='' + gameData.id)
-                    button(class="uk-button uk-button-secondary") Simulate
             h3 See Results:
             .uk-margin
                 a(class="uk-button uk-button-secondary", href='/games/' + gameSlug + '/results') My Results
