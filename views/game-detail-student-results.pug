@@ -17,14 +17,12 @@ include partials/header
             thead
                 tr
                     th Word
-                    th Times Correct
                     th Times Incorrect
             tbody
-                each results, word in gameResultsData.results 
+                each timesWrong, word in gameResultsData 
                     tr
                         td #{word}
-                        td #{results.timescorrect}
-                        td #{results.timeswrong}
+                        td #{timesWrong}
 
 
 include partials/footer

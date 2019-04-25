@@ -3,7 +3,7 @@ function SaveResults(arg) { // rename
 	const gameId = $("[data-gameid]")[0].attributes[1].value
 	const studentId = $("[data-studentid]")[0].attributes[2].value
 
-	$.post( "http://localhost:5000/games/data/" + gameId + "/" + studentId, { testdata: arg } )
+	$.post( "http://localhost:5000/games/data/" + gameId + "/" + studentId, { results: arg } )
 }
 
 $(document).ready(function () {
@@ -35,7 +35,7 @@ $(document).ready(function () {
 	// }
 
 	function loadGame(gameData) {
-		var myGame = UnityLoader.instantiate($(".new-game-frame")[0], "http://localhost:5000/public/games/spelling/Build/TypingBuild.json", {
+		var myGame = UnityLoader.instantiate($(".new-game-frame")[0], "http://localhost:5000/public/games/spelling/Build/TypingFinalBuild.json", {
 			onProgress: (gameInstance, progress) => {
 				if (progress == 1) {
 					console.log("game is loaded")

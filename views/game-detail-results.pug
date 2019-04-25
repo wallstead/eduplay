@@ -13,19 +13,18 @@ include partials/header
         h1 #{title}
 
     .gameContent
-        table.uk-table
-            caption #{studentData.firstname} #{studentData.lastname}
-            thead
-                tr
-                    th Word
-                    th Times Correct
-                    th Times Incorrect
-            tbody
-                each results, word in gameResultsData.results 
+        each student, index in studentData
+            table.uk-table
+                caption #{student.firstname} #{student.lastname}
+                thead
                     tr
-                        td #{word}
-                        td #{results.timescorrect}
-                        td #{results.timeswrong}
+                        th Word
+                        th Times Incorrect
+                tbody
+                    each timesWrong, word in gameResultsData[index] 
+                        tr
+                            td #{word}
+                            td #{timesWrong}
 
 
 include partials/footer
