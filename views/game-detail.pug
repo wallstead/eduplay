@@ -28,7 +28,7 @@ include partials/header
                                             input.uk-input(type='text', name='words', value='' + word)
                                             button.uk-form-icon.uk-form-icon-flip(uk-icon='icon: close', type="button", class="delete-word")
                             .uk-margin
-                                button(class="uk-button uk-button-primary", type="button", id="add-word") 
+                                button(class="uk-button uk-button-primary", type="button", id="add-word-spelling") 
                                     |Add Word
                                     span(uk-icon='plus')
                         .uk-margin
@@ -46,12 +46,11 @@ include partials/header
                                             input.uk-input(type='text', name='problems', value='' + problem)
                                             button.uk-form-icon.uk-form-icon-flip(uk-icon='icon: close', type="button", class="delete-problem")
                             .uk-margin
-                                button(class="uk-button uk-button-primary", type="button", id="add-problem") 
+                                button(class="uk-button uk-button-primary", type="button", id="add-word-math") 
                                     |Add Problem
                                     span(uk-icon='plus')
                         .uk-margin
                             button(class="uk-button uk-button-secondary") Update Game
-            else
             
             .game-information
                 h3 Share with your students:
