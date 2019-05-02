@@ -3,7 +3,7 @@ function SaveResults(arg) { // rename
 	const gameId = $("[data-gameid]")[0].attributes[1].value
 	const studentId = $("[data-studentid]")[0].attributes[2].value
 
-	$.post( "http://localhost:5000/games/data/" + gameId + "/" + studentId, { results: arg } )
+	$.post( "/games/data/" + gameId + "/" + studentId, { results: arg } )
 }
 
 $(document).ready(function () {
@@ -45,7 +45,7 @@ $(document).ready(function () {
 
 	function loadGame(gameType, gameData) {
 		if (gameType == 'spelling') {
-			var myGame = UnityLoader.instantiate($(".new-game-frame")[0], "http://localhost:5000/public/games/spelling/Build/TypingFinalBuild.json", {
+			var myGame = UnityLoader.instantiate($(".new-game-frame")[0], "/public/games/spelling/Build/TypingFinalBuild.json", {
 				onProgress: (gameInstance, progress) => {
 					if (progress == 1) {
 						console.log("game is loaded")
@@ -55,7 +55,7 @@ $(document).ready(function () {
 				}
 			});
 		} else if (gameType == 'math') {
-			var myGame = UnityLoader.instantiate($(".new-game-frame")[0], "http://localhost:5000/public/games/math/Build/FinalBuild.json", {
+			var myGame = UnityLoader.instantiate($(".new-game-frame")[0], "/public/games/math/Build/FinalBuild.json", {
 				onProgress: (gameInstance, progress) => {
 					if (progress == 1) {
 						console.log("game is loaded")
@@ -73,7 +73,7 @@ $(document).ready(function () {
 		const gameId = $("[data-gameid]")[0].attributes[1].value
 		const gameType = $("[data-gametype]")[0].attributes[3].value
 
-		$.get( "http://localhost:5000/games/data/" + gameId, function( data ) {
+		$.get( "/games/data/" + gameId, function( data ) {
 			console.log("game data:");
 			console.log(data);
 			loadGame(gameType, data);
