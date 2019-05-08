@@ -8,6 +8,8 @@ function SaveResults(arg) { // rename
 
 $(document).ready(function () {
 
+	/* Basic listening for clicks on certain buttons */
+
 	$('#add-word-spelling').on('click', function () {
 		var wordsDiv = $('.wordsInGame');
 		wordsDiv.append('<div class="uk-margin"><div class="uk-inline"><input class="uk-input" type="text" name="words" /><button class="uk-form-icon uk-form-icon-flip delete-word" uk-icon="icon: close" type="button"></button></div></div>');
@@ -35,14 +37,6 @@ $(document).ready(function () {
 		3. save game data with function "SayHello" (rename).
 	*/
 
-	// function myProgress(gameInstance, progress) {
-	// 	if (progress == 1) {
-	// 		console.log("game is loaded")
-	// 		console.log(gameInstance)
-	// 		gameInstance.SendMessage("Main Camera", "SetGameData", "Hello from the web page!");
-	// 	}
-	// }
-
 	function loadGame(gameType, gameData) {
 		if (gameType == 'spelling') {
 			var myGame = UnityLoader.instantiate($(".new-game-frame")[0], "/public/games/spelling/Build/TypingFinalBuild.json", {
@@ -67,6 +61,8 @@ $(document).ready(function () {
 		}
 		
 	}
+
+
 
 	if ($(".new-game-frame").length) {
 		// get game id from element data
